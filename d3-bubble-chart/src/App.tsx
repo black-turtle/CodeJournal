@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { CSSProperties } from "react";
+import BubbleChart from "./graph/BubbleChart";
+import { dummyData } from "./graph/data";
+
+const styles: Record<string, CSSProperties> = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    // background: "red",
+    margin: "2rem 0",
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={styles.container}>
+      <h1>Bubble graph</h1>
+      <div>
+        <BubbleChart data={dummyData} />
+      </div>
     </div>
   );
 }
